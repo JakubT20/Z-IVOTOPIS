@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Settings2, X } from "lucide-react";
 import { useEffect, useState, useSyncExternalStore } from "react";
+import { withBasePath } from "@/lib/site-paths";
 
 const CONSENT_KEY = "jakub-trnka-cookie-consent";
 const SERVER_SNAPSHOT = "__server__";
@@ -170,7 +171,7 @@ export function CookieConsentBanner() {
                 </button>
               )}
               <a
-                href="/cookies"
+                href={withBasePath("/cookies")}
                 className="inline-flex items-center justify-center px-5 py-3 text-sm font-black uppercase text-white/62 transition-colors hover:text-white"
               >
                 Viac o cookies

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { aboutSummary } from "@/data/profile";
+import { withBasePath } from "@/lib/site-paths";
 
 export function AboutSection() {
   return (
@@ -22,7 +23,7 @@ export function AboutSection() {
               <div className="relative aspect-[654/816]">
                 <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[7px] bg-[var(--accent)]" aria-hidden="true" />
                 <Image
-                  src="/about-jakub.jpg"
+                  src={withBasePath("/about-jakub.jpg")}
                   alt="Jakub Trnka"
                   fill
                   sizes="(min-width: 1280px) 360px, (min-width: 1024px) 28vw, 90vw"

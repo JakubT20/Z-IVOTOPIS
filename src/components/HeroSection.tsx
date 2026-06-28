@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download, Mail } from "lucide-react";
 import Image from "next/image";
 import { highlights, positioning } from "@/data/profile";
+import { withBasePath } from "@/lib/site-paths";
 
 export function HeroSection() {
   return (
@@ -12,7 +13,7 @@ export function HeroSection() {
       className="relative min-h-[100svh] overflow-hidden bg-black px-5 pb-8 pt-24 text-white sm:px-8 lg:pt-28"
     >
       <Image
-        src="/hero-jakub-studio.jpg"
+        src={withBasePath("/hero-jakub-studio.jpg")}
         alt="Jakub Trnka hero portrait"
         fill
         sizes="100vw"
@@ -63,7 +64,7 @@ export function HeroSection() {
               <ArrowDown aria-hidden="true" className="h-4 w-4" />
             </a>
             <a
-              href="/Jakub-Trnka-CV.pdf"
+              href={withBasePath("/Jakub-Trnka-CV.pdf")}
               download
               className="inline-flex items-center justify-center gap-2 border border-white/24 px-4 py-4 text-xs font-black uppercase text-white transition-colors hover:bg-white hover:text-black sm:text-sm lg:whitespace-nowrap lg:px-6"
             >

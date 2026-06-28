@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CookieSettingsButton } from "@/components/CookieSettingsButton";
 import { SiteFooter } from "@/components/SiteFooter";
+import { withBasePath } from "@/lib/site-paths";
 
 export const metadata: Metadata = {
   title: "Cookies | Jakub Trnka",
@@ -17,7 +18,7 @@ export default function CookiesPage() {
           <header className="flex items-center justify-between border-b border-black/12 pb-6">
             <Link href="/" className="flex items-center gap-3">
               <span className="grid h-12 w-12 place-items-center overflow-hidden bg-white p-1.5 shadow-[0_12px_32px_rgba(0,0,0,0.12)]">
-                <Image src="/logo-jt-2.png" alt="" width={44} height={44} className="h-full w-full object-contain" />
+                <Image src={withBasePath("/logo-jt-2.png")} alt="" width={44} height={44} className="h-full w-full object-contain" />
               </span>
               <span className="text-sm font-black uppercase">Jakub Trnka</span>
             </Link>

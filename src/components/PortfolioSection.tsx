@@ -5,6 +5,7 @@ import { CalendarDays, Filter, Tag, UserRound, X } from "lucide-react";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { withBasePath } from "@/lib/site-paths";
 import type { PortfolioProject } from "@/types/project";
 
 type PortfolioSectionProps = {
@@ -106,7 +107,7 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                     }`}
                   >
                     <Image
-                      src={project.cover}
+                      src={withBasePath(project.cover)}
                       alt={`${project.title} cover`}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 38vw"
@@ -193,7 +194,7 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                 <div className="border-b border-black/12 p-5 sm:p-8 lg:border-b-0 lg:border-r">
                   <div className="relative aspect-[4/3] overflow-hidden bg-black">
                     <Image
-                      src={activeImage ?? selectedProject.cover}
+                      src={withBasePath(activeImage ?? selectedProject.cover)}
                       alt={`Vybraný vizuál projektu ${selectedProject.title}`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 800px"
@@ -212,7 +213,7 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                         aria-label={`Zobraziť obrázok projektu ${selectedProject.title}`}
                       >
                         <Image
-                          src={image}
+                          src={withBasePath(image)}
                           alt=""
                           fill
                           sizes="140px"

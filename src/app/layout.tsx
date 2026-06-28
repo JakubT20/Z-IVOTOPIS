@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CookieConsentBanner } from "@/components/CookieConsentBanner";
+import { withBasePath } from "@/lib/site-paths";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,8 +14,8 @@ export const metadata: Metadata = {
     type: "website"
   },
   icons: {
-    icon: "/logo-jt-2.png",
-    apple: "/logo-jt-2.png"
+    icon: withBasePath("/logo-jt-2.png"),
+    apple: withBasePath("/logo-jt-2.png")
   }
 };
 

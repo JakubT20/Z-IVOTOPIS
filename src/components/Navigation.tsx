@@ -4,6 +4,7 @@ import { Download, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { navItems } from "@/data/profile";
+import { withBasePath } from "@/lib/site-paths";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ export function Navigation() {
         >
           <span className="grid h-11 w-11 place-items-center overflow-hidden bg-white p-1.5 shadow-[0_12px_32px_rgba(0,0,0,0.22)] transition-transform duration-300 group-hover:-translate-y-0.5">
             <Image
-              src="/logo-jt-2.png"
+              src={withBasePath("/logo-jt-2.png")}
               alt=""
               width={40}
               height={40}
@@ -44,7 +45,7 @@ export function Navigation() {
 
         <div className="flex items-center gap-2">
           <a
-            href="/Jakub-Trnka-CV.pdf"
+            href={withBasePath("/Jakub-Trnka-CV.pdf")}
             download
             className="hidden items-center gap-2 bg-white px-4 py-2 text-xs font-black uppercase text-black transition-colors hover:bg-[var(--accent)] hover:text-white sm:inline-flex"
           >
@@ -80,7 +81,7 @@ export function Navigation() {
               </a>
             ))}
             <a
-              href="/Jakub-Trnka-CV.pdf"
+              href={withBasePath("/Jakub-Trnka-CV.pdf")}
               download
               className="mt-2 inline-flex items-center justify-center gap-2 bg-[var(--accent)] px-4 py-3 text-sm font-black uppercase text-white"
               onClick={() => setIsOpen(false)}
