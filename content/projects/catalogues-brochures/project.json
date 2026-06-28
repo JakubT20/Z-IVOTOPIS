@@ -1,0 +1,16 @@
+{
+  "title": "Katalógy a brožúry - tlačový dizajn",
+  "category": "Tlačový dizajn",
+  "client": "Vybraní klienti",
+  "year": "2025",
+  "description": "Prehľadné layouty katalógov a brožúr pre produktové informácie, predajnú komunikáciu a profesionálnu tlačovú prezentáciu.",
+  "role": "Grafický dizajn / layout / príprava do tlače",
+  "tags": ["katalóg", "brožúra", "tlačová grafika"],
+  "cover": "/portfolio/catalogues-brochures/cover.jpg",
+  "images": [
+    "/portfolio/catalogues-brochures/image-1.jpg",
+    "/portfolio/catalogues-brochures/image-2.jpg",
+    "/portfolio/catalogues-brochures/image-3.jpg"
+  ],
+  "featured": false
+}

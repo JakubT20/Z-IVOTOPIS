@@ -1,0 +1,16 @@
+{
+  "title": "AI vizualizácie - produktové a realitné vizuály",
+  "category": "AI vizuály",
+  "client": "Konceptová práca",
+  "year": "2026",
+  "description": "AI asistované vizuálne koncepty doladené grafickými nástrojmi pre realistickú produktovú prezentáciu, atmosféru, restyling a vylepšenie obrázkov.",
+  "role": "AI vizuály / grafický dizajn / vylepšenie obrázkov",
+  "tags": ["AI vizuály", "produktový koncept", "reality"],
+  "cover": "/portfolio/ai-visualizations/cover.jpg",
+  "images": [
+    "/portfolio/ai-visualizations/image-1.jpg",
+    "/portfolio/ai-visualizations/image-2.jpg",
+    "/portfolio/ai-visualizations/image-3.jpg"
+  ],
+  "featured": true
+}
