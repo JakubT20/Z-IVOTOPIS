@@ -13,7 +13,7 @@ export function AboutSection() {
             <p className="section-number mt-6 text-black/10">01</p>
           </div>
           <h2 className="section-title-xl max-w-5xl text-black">
-            Kreatívna práca postavená na použiteľných vizuálnych výstupoch.
+            Vizuálna tvorba, ktorá dáva nápadom jasnú formu.
           </h2>
         </div>
 
@@ -50,8 +50,8 @@ export function AboutSection() {
             <div className="mt-12 grid gap-px bg-black/12 md:grid-cols-3">
               {[
                 "Tlačová a online grafika",
-                "AI asistované vizuálne koncepty",
-                "Sociálne siete, video a webový obsah"
+                "AI koncepty s výraznou atmosférou",
+                "Sociálne siete, video a digitálny obsah"
               ].map((item) => (
                 <div key={item} className="bg-white p-6">
                   <p className="text-sm font-black uppercase leading-6 text-black">{item}</p>

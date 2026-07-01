@@ -9,11 +9,11 @@ export function SkillsSection() {
           <div>
             <p className="text-xs font-black uppercase text-[var(--accent)]">02 / Služby</p>
             <p className="mt-4 max-w-xs text-sm font-semibold leading-6 text-white/54">
-              Vybrané služby pre značky, projekty a online prezentácie, ktoré potrebujú výrazný vizuálny obsah.
+              Vizuálne riešenia pre značky, projekty a online prezentácie, ktoré potrebujú charakter a jasný výraz.
             </p>
           </div>
           <h2 className="section-title-xl max-w-5xl text-white">
-            Grafika, AI vizuály a obsah, ktorý pôsobí hotovo.
+            Grafika, AI vizuály a obsah pripravený zaujať.
           </h2>
         </div>
 
@@ -38,14 +38,9 @@ export function SkillsSection() {
                 <h3 className="font-display text-3xl font-black uppercase leading-none text-white md:text-4xl">
                   {group.title}
                 </h3>
-                <ul className="grid gap-2 sm:grid-cols-2">
-                  {group.skills.map((skill) => (
-                    <li key={skill} className="flex gap-3 text-sm font-semibold leading-6 text-white/64">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-[var(--accent)]" />
-                      <span className="max-w-sm">{skill}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="max-w-3xl text-base font-semibold leading-8 text-white/64 md:text-lg">
+                  {group.description}
+                </p>
               </article>
             );
           })}

@@ -1,5 +1,4 @@
 import { AboutSection } from "@/components/AboutSection";
-import { CertificatesSection } from "@/components/CertificatesSection";
 import { ContactSection } from "@/components/ContactSection";
 import { EducationSection } from "@/components/EducationSection";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
@@ -21,10 +20,9 @@ export default async function Home() {
         <HeroSection />
         <AboutSection />
         <SkillsSection />
+        <PortfolioSection projects={projects} />
         <ExperienceTimeline />
         <EducationSection />
-        <CertificatesSection />
-        <PortfolioSection projects={projects} />
         <ContactSection />
       </main>
       <SiteFooter />

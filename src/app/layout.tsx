@@ -6,11 +6,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Jakub Trnka | Kreatívny digitálny tvorca",
   description:
-    "Portfólio a CV web Jakuba Trnku zameraný na grafický dizajn, AI vizuály, video obsah, správu WordPressu a obsah pre sociálne siete.",
+    "Portfólio Jakuba Trnku zamerané na grafiku, AI vizuály, digitálny obsah a online prezentácie pre značky s charakterom.",
   openGraph: {
     title: "Jakub Trnka | Kreatívny digitálny tvorca",
     description:
-      "Grafický dizajn, AI vizuály, video obsah, správa WordPressu a obsah pre sociálne siete.",
+      "Grafika, AI vizuály a digitálny obsah pre značky, projekty a online prezentácie.",
     type: "website"
   },
   icons: {

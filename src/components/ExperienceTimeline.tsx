@@ -15,7 +15,7 @@ export function ExperienceTimeline() {
             <p className="section-number mt-6 text-black/10">04</p>
           </div>
           <h2 className="section-title-xl max-w-6xl text-black">
-            Praktická tvorba pre značky, realitné projekty a online obsah.
+            Tvorba pre značky, realitné projekty a online komunikáciu.
           </h2>
         </div>
 

@@ -11,7 +11,7 @@ export function ContactSection() {
     },
     {
       label: "Telefón",
-      value: "+421950896102",
+      value: "+421 950 896 102",
       href: "tel:+421950896102",
       icon: Phone
     },
@@ -27,13 +27,16 @@ export function ContactSection() {
     <AnimatedSection id="contact" tone="dark" className="overflow-hidden px-5 py-24 sm:px-8 lg:py-32">
       <div className="mx-auto grid max-w-[1520px] gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
         <div>
-          <p className="mb-6 text-xs font-black uppercase text-[var(--accent)]">07 / Kontakt</p>
+          <p className="mb-6 text-xs font-black uppercase text-[var(--accent)]">06 / Kontakt</p>
           <h2 className="section-title-xl max-w-5xl text-white">
-            Poďme vytvoriť vizuálny obsah, ktorý funguje.
+            Máte nápad, projekt alebo značku, ktorá potrebuje vizuálny výraz?
           </h2>
+          <p className="mt-6 max-w-2xl text-2xl font-black leading-9 text-white">
+            Poďme jej dať formu.
+          </p>
           <p className="mt-8 max-w-2xl text-lg font-semibold leading-8 text-white/62">
-            Dostupné pre grafický dizajn, AI asistované vizuály, produktový obsah,
-            krátke videá, WordPress aktualizácie a vizuály pre sociálne siete.
+            Dostupný pre grafický dizajn, AI vizuály, produktový obsah,
+            krátke videá, WordPress úpravy a vizuály pre sociálne siete.
           </p>
         </div>
 

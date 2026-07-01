@@ -27,7 +27,7 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto grid min-h-[calc(100vh-7rem)] max-w-[1520px] content-between gap-8">
         <div className="flex items-center justify-between border-y border-white/18 py-3 text-[0.68rem] font-black uppercase text-white/75">
-          <span>01 / Kreatívne portfólio</span>
+          <span>Kreatívne portfólio</span>
           <span className="hidden lg:block">Grafický dizajn / AI vizuály / video / web obsah</span>
           <span>Slovensko</span>
         </div>
@@ -41,7 +41,7 @@ export function HeroSection() {
         >
           <div className="mb-8 hidden max-w-[22rem] items-center gap-3 border border-white/20 bg-white/[0.035] px-4 py-3 text-sm font-bold leading-6 text-white/82 backdrop-blur-sm sm:inline-flex lg:max-w-[30rem]">
             <span className="h-3 w-3 bg-[var(--accent)]" />
-            {positioning}
+            Vizuálny dojem / AI koncept / online prezentácia
           </div>
 
           <p className="mb-4 text-sm font-black uppercase text-white/62">
@@ -52,7 +52,10 @@ export function HeroSection() {
             <span className="studio-outline block text-white">Trnka</span>
           </h1>
           <p className="mt-6 max-w-[22rem] text-lg font-semibold leading-8 text-white/82 sm:text-xl sm:leading-9 lg:max-w-[30rem]">
-            Grafický dizajn, AI vizuály, video obsah, správa WordPressu a obsah pre sociálne siete.
+            {positioning}
+          </p>
+          <p className="mt-3 max-w-[22rem] text-base font-semibold leading-7 text-white/70 sm:text-lg sm:leading-8 lg:max-w-[30rem]">
+            Rýchlo, premyslene, s citom pre vizuálny detail.
           </p>
 
           <div className="mt-7 grid max-w-[22rem] grid-cols-2 gap-3 lg:max-w-[39rem] lg:grid-cols-[1.25fr_1fr_1.15fr]">

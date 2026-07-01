@@ -54,10 +54,10 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
           </div>
           <div>
             <h2 className="section-title-xl max-w-6xl text-black">
-              Veľké vizuály, kampane a obsah pre online prezentáciu.
+              Vybrané práce naprieč grafikou, AI vizuálmi a digitálnym obsahom.
             </h2>
             <p className="mt-6 max-w-3xl text-lg font-semibold leading-8 text-black/58">
-              Projekty sa automaticky načítavajú z JSON súborov v priečinku content. Stačí pridať nový projektový folder a web ho zobrazí bez úprav komponentov.
+              Vybrané práce ukazujú rôzne typy vizuálnych výstupov - od AI konceptov a produktových vizuálov až po realitnú grafiku, sociálne siete, vizuálnu identitu a tlačové materiály.
             </p>
           </div>
         </div>

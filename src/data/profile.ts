@@ -12,80 +12,52 @@ import {
 
 export const navItems = [
   { label: "O mne", href: "#about" },
-  { label: "Zručnosti", href: "#skills" },
-  { label: "Skúsenosti", href: "#experience" },
+  { label: "Služby", href: "#skills" },
   { label: "Portfólio", href: "#portfolio" },
+  { label: "Skúsenosti", href: "#experience" },
+  { label: "Vzdelanie + Certifikáty", href: "#education" },
   { label: "Kontakt", href: "#contact" }
 ];
 
 export const positioning =
-  "Kreatívny digitálny tvorca zameraný na grafický dizajn, AI vizuály, video obsah a online prezentáciu.";
+  "Grafika, AI vizuály a digitálny obsah pre značky, projekty a online prezentácie s charakterom.";
 
 export const aboutSummary = [
-  "Som kreatívny digitálny tvorca, ktorý prepája grafický dizajn, WordPress, tvorbu obsahu a AI nástroje do praktických vizuálnych výstupov pre značky, firmy a projekty.",
-  "Venujem sa tvorbe tlačovej a online grafiky, marketingových materiálov, produktových vizuálov, obsahu pre sociálne siete, krátkych videí a AI asistovaných vizualizácií. Pri práci sa sústredím na jasnú komunikáciu, funkčný vizuál a výsledok, ktorý sa dá reálne použiť v predaji, prezentácii alebo online komunikácii.",
-  "Mojou výhodou je rýchle pochopenie zadania, praktický prístup a schopnosť spájať dizajn, obsah a moderné nástroje do jedného použiteľného riešenia."
+  "Som kreatívny digitálny tvorca, ktorý prepája grafický dizajn, WordPress, tvorbu obsahu a AI nástroje do vizuálnych výstupov pre značky, projekty a online komunikáciu.",
+  "Venujem sa tlačovej a online grafike, marketingovým materiálom, produktovým vizuálom, obsahu pre sociálne siete, krátkym videám a AI asistovaným vizualizáciám. Pri práci sa sústredím na čistú vizuálnu komunikáciu, atmosféru a výsledok, ktorý vie zaujať v predaji, prezentácii aj digitálnom priestore.",
+  "Mojou výhodou je rýchle pochopenie zadania, cit pre vizuál a schopnosť spájať dizajn, obsah a moderné nástroje do výstupu, ktorý pôsobí profesionálne, sviežo a pripravený pre reálnu komunikáciu značky."
 ];
 
 export const skillGroups = [
   {
     title: "Grafický dizajn",
     icon: Palette,
-    skills: [
-      "Adobe Illustrator",
-      "Adobe Photoshop",
-      "Adobe InDesign",
-      "Tlačová grafika",
-      "Online bannery",
-      "Billboardový dizajn",
-      "Katalógy a brožúry",
-      "Vizuály pre sociálne siete"
-    ]
+    description:
+      "Tlačová a online grafika, bannery, billboardy, katalógy, brožúry, reklamné vizuály a materiály pre značky, produkty aj realitné projekty."
   },
   {
     title: "AI vizuály",
     icon: Sparkles,
-    skills: [
-      "AI generované produktové vizualizácie",
-      "AI úprava fotografií",
-      "Prepájanie AI výstupov s grafickým dizajnom",
-      "Realistické vizuálne koncepty",
-      "Vylepšovanie a restyling obrázkov"
-    ]
+    description:
+      "AI asistované produktové vizualizácie, realistické koncepty, úprava fotografií, restyling obrázkov a tvorba vizuálov s výraznou atmosférou."
   },
   {
-    title: "Video",
+    title: "Video obsah",
     icon: Video,
-    skills: [
-      "AI tvorba videí",
-      "Video scenáre",
-      "Krátke propagačné videá",
-      "Reels videá",
-      "Strih videa",
-      "Final Cut Pro"
-    ]
+    description:
+      "Krátke propagačné videá, reels obsah, video scenáre, AI video koncepty a strih pre online komunikáciu."
   },
   {
     title: "Web / WordPress",
     icon: LayoutPanelTop,
-    skills: [
-      "Správa WordPressu",
-      "Aktualizácia obsahu webu",
-      "Pridávanie a úprava stránok",
-      "Základné úpravy rozloženia",
-      "Nahrávanie a správa webového obsahu"
-    ]
+    description:
+      "Úprava obsahu webu, pridávanie stránok, vizuálne doladenie layoutov a príprava webovej prezentácie tak, aby pôsobila čisto a profesionálne."
   },
   {
-    title: "Marketing / sociálne siete",
+    title: "Sociálne siete",
     icon: Megaphone,
-    skills: [
-      "Tvorba príspevkov na Facebook a Instagram",
-      "Plánovanie obsahu pre sociálne siete",
-      "Produktové texty",
-      "Propagačné materiály",
-      "Základná marketingová komunikácia"
-    ]
+    description:
+      "Vizuály, príspevky, produktové texty a obsah pre Facebook, Instagram a online kampane."
   }
 ];
 
@@ -93,31 +65,31 @@ export const experience = [
   {
     company: "ISMONT s.r.o.",
     role: "Grafický dizajnér pre realitné developerské projekty",
-    period: "doplniť dátum",
+    period: "2026 – súčasnosť",
     description: [
-      "Grafický dizajn pre realitné developerské projekty",
+      "Vizuálny obsah pre realitné developerské projekty",
       "Billboardy a návrhy outdoorovej reklamy",
       "Katalógy, brožúry a predajné materiály",
-      "Vizuálny obsah pre projektové weby a sociálne siete",
+      "Online vizuály pre projektové weby a sociálne siete",
       "AI asistované vizuálne koncepty a príprava obrázkov"
     ]
   },
   {
     company: "MÔJALTÁNOK s.r.o.",
     role: "Grafický dizajnér / tvorca obsahu / správca WordPressu",
-    period: "01/2024 - súčasnosť",
+    period: "01/2024 – súčasnosť",
     description: [
       "Tvorba obsahu pre sociálne siete",
       "Grafická príprava reklamných vizuálov, bannerov a príspevkov",
-      "Správa webu a aktualizácia obsahu",
+      "WordPress obsah a vizuálne doladenie webovej prezentácie",
       "Produktové texty, popisy a propagačné materiály",
-      "Podpora komunikácie a príprava obsahu"
+      "Obsahová príprava pre online komunikáciu značky"
     ]
   },
   {
     company: "LepoCreative s.r.o.",
     role: "Kameraman / fotograf / grafický dizajnér",
-    period: "01/2022 - 01/2023",
+    period: "01/2022 – 01/2023",
     description: [
       "Kamera a fotografia pre svadobné a komerčné projekty",
       "Spolupráca na video produkcii",
@@ -154,9 +126,9 @@ export const certificates = [
 ];
 
 export const highlights = [
-  { label: "Hlavné zameranie", value: "Grafika + AI špecialista" },
-  { label: "Online práca", value: "WordPress obsah" },
-  { label: "Štýl výstupov", value: "Rýchlo, prakticky, použiteľne" }
+  { label: "Hlavné zameranie", value: "Grafika + AI vizuály" },
+  { label: "Online prezentácia", value: "Obsah pre značky" },
+  { label: "Štýl výstupov", value: "Premyslene, sviežo, s detailom" }
 ];
 
 export const quickStats = [
