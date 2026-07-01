@@ -1,0 +1,16 @@
+{
+  "title": "Billboardy - Istrica",
+  "category": "Billboardy / print grafika",
+  "client": "Istrica",
+  "year": "2026",
+  "description": "Séria billboardových mockupov pre rezidenčný projekt Istrica. Vizuály kombinujú architektonické zobrazenie, výraznú farebnú identitu a čistú outdoorovú komunikáciu.",
+  "role": "Grafický dizajn / billboard / realitný marketing",
+  "tags": ["Billboard", "Realitný marketing", "Print grafika"],
+  "cover": "/assets/portfolio/billboardy/istrica/image-1.webp",
+  "images": [
+    "/assets/portfolio/billboardy/istrica/image-2.webp",
+    "/assets/portfolio/billboardy/istrica/image-3.webp",
+    "/assets/portfolio/billboardy/istrica/image-4.webp"
+  ],
+  "featured": true
+}

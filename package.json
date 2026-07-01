@@ -8,8 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "assets:generate": "node scripts/generate-assets.mjs",
-    "billboards:previews": "node scripts/generate-billboard-previews.mjs"
+    "assets:generate": "node scripts/generate-assets.mjs"
   },
   "dependencies": {
     "framer-motion": "12.41.0",

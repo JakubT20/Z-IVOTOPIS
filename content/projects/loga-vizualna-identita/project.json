@@ -1,0 +1,16 @@
+{
+  "title": "Logá a vizuálne identity",
+  "category": "Logá / vizuálna identita",
+  "client": "Vybrané značky",
+  "year": "2026",
+  "description": "Výber logo mockupov a vizuálnych identít pre osobnú značku, realitný projekt, technologický obsah a firemnú prezentáciu.",
+  "role": "Logo dizajn / vizuálna identita / brand mockup",
+  "tags": ["Logo dizajn", "Vizuálna identita", "Branding"],
+  "cover": "/assets/portfolio/loga/jt.webp",
+  "images": [
+    "/assets/portfolio/loga/podzahradna.webp",
+    "/assets/portfolio/loga/smartoviny.webp",
+    "/assets/portfolio/loga/salo-group.webp"
+  ],
+  "featured": true
+}

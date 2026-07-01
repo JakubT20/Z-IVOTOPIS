@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { CalendarDays, Download, ExternalLink, Filter, Tag, UserRound, X } from "lucide-react";
+import { CalendarDays, Filter, Tag, UserRound, X } from "lucide-react";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
@@ -12,8 +12,12 @@ type PortfolioSectionProps = {
   projects: PortfolioProject[];
 };
 
-function isBillboardProject(project: PortfolioProject) {
-  return project.category === "Billboardy / print grafika" || project.pdf?.includes("/assets/billboardy/");
+function usesCleanPreview(project: PortfolioProject) {
+  return [
+    "Billboardy / print grafika",
+    "Citylight / print grafika",
+    "Logá / vizuálna identita"
+  ].includes(project.category);
 }
 
 type PortfolioImageProps = {
@@ -57,7 +61,7 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
   const [activeCategory, setActiveCategory] = useState("Všetko");
   const [selectedProject, setSelectedProject] = useState<PortfolioProject | null>(null);
   const [activeImage, setActiveImage] = useState<string | null>(null);
-  const selectedIsBillboard = selectedProject ? isBillboardProject(selectedProject) : false;
+  const selectedUsesCleanPreview = selectedProject ? usesCleanPreview(selectedProject) : false;
 
   const categories = useMemo(() => {
     const projectCategories = Array.from(new Set(projects.map((project) => project.category)));
@@ -78,7 +82,7 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
 
   const openProject = (project: PortfolioProject) => {
     setSelectedProject(project);
-    setActiveImage(project.images[0] ?? project.cover);
+    setActiveImage(project.cover);
   };
 
   const closeProject = () => {
@@ -133,7 +137,7 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
         <motion.div layout className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => {
-              const isBillboard = isBillboardProject(project);
+              const cleanPreview = usesCleanPreview(project);
 
               return (
                 <motion.article
@@ -144,7 +148,7 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                   exit={{ opacity: 0, y: 18 }}
                   transition={{ duration: 0.35 }}
                   className={`group overflow-hidden border border-black/12 bg-white ${
-                    isBillboard
+                    cleanPreview
                       ? "md:col-span-2 xl:col-span-2"
                       : `${index % 5 === 0 ? "md:col-span-2 xl:col-span-2" : ""} ${
                           index % 5 === 1 ? "xl:row-span-2" : ""
@@ -158,8 +162,8 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                   >
                     <div
                       className={`relative overflow-hidden ${
-                        isBillboard
-                          ? "aspect-[16/9] bg-white sm:aspect-[2.08/1]"
+                        cleanPreview
+                          ? "aspect-[4/3] bg-white"
                           : index % 5 === 1
                             ? "aspect-[3/4] xl:aspect-[3/5]"
                             : "aspect-[4/3]"
@@ -168,22 +172,28 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                       <PortfolioImage
                         src={project.cover}
                         alt={`${project.title} cover`}
-                        sizes={isBillboard ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 38vw"}
+                        sizes={cleanPreview ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 38vw"}
                         className={
-                          isBillboard
-                            ? "object-contain transition-transform duration-700 group-hover:scale-[1.015]"
+                          cleanPreview
+                            ? "object-cover transition-transform duration-700 group-hover:scale-[1.025]"
                             : "object-cover transition-transform duration-700 group-hover:scale-105"
                         }
                       />
-                      {isBillboard ? (
+                      {cleanPreview ? (
                         <>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/62 via-black/0 to-transparent" />
                           <div className="absolute inset-0 ring-1 ring-inset ring-black/10" />
-                          <span className="absolute left-4 top-4 bg-black/78 px-3 py-1.5 text-[0.65rem] font-black uppercase text-[var(--accent)]">
+                          <span className="absolute left-4 top-4 bg-black/82 px-3 py-1.5 text-[0.65rem] font-black uppercase text-[var(--accent)]">
                             {project.category}
                           </span>
                           <span className="absolute right-4 top-4 font-display text-5xl font-black leading-none text-white/38">
                             {String(index + 1).padStart(2, "0")}
                           </span>
+                          <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                            <h3 className="max-w-3xl font-display text-3xl font-black uppercase leading-none text-white sm:text-5xl">
+                              {project.title}
+                            </h3>
+                          </div>
                         </>
                       ) : (
                         <>
@@ -207,20 +217,11 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                         </>
                       )}
                     </div>
-                    <div
-                      className={`grid gap-5 p-5 sm:p-6 ${
-                        isBillboard ? "sm:grid-cols-[1fr_auto]" : "sm:grid-cols-[1fr_auto]"
-                      }`}
-                    >
+                    <div className="grid gap-5 p-5 sm:grid-cols-[1fr_auto] sm:p-6">
                       <div>
-                        {isBillboard ? (
-                          <h3 className="font-display text-3xl font-black uppercase leading-none text-black sm:text-4xl">
-                            {project.title}
-                          </h3>
-                        ) : null}
                         <p
                           className={`text-sm font-semibold leading-6 text-black/58 ${
-                            isBillboard ? "mt-4 line-clamp-2 max-w-2xl" : "line-clamp-3"
+                            cleanPreview ? "line-clamp-2 max-w-2xl" : "line-clamp-3"
                           }`}
                         >
                           {project.description}
@@ -238,27 +239,6 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                       </div>
                     </div>
                   </button>
-                  {project.pdf ? (
-                    <div className="grid gap-3 px-5 pb-5 sm:grid-cols-2 sm:px-6 sm:pb-6">
-                      <a
-                        href={withBasePath(project.pdf)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 border border-black bg-black px-4 py-3 text-xs font-black uppercase text-white transition-colors hover:border-[var(--accent)] hover:bg-[var(--accent)]"
-                      >
-                        Zobraziť PDF
-                        <ExternalLink aria-hidden="true" className="h-4 w-4" />
-                      </a>
-                      <a
-                        href={withBasePath(project.pdf)}
-                        download
-                        className="inline-flex items-center justify-center gap-2 border border-black/14 px-4 py-3 text-xs font-black uppercase text-black transition-colors hover:border-black hover:bg-black hover:text-white"
-                      >
-                        Stiahnuť PDF
-                        <Download aria-hidden="true" className="h-4 w-4" />
-                      </a>
-                    </div>
-                  ) : null}
                 </motion.article>
               );
             })}
@@ -305,12 +285,12 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
 
               <div className="grid gap-0 lg:grid-cols-[1.28fr_0.72fr]">
                 <div className="border-b border-black/12 p-5 sm:p-8 lg:border-b-0 lg:border-r">
-                  <div className={`relative overflow-hidden ${selectedIsBillboard ? "aspect-[2.08/1] bg-white" : "aspect-[4/3] bg-black"}`}>
+                  <div className={`relative overflow-hidden ${selectedUsesCleanPreview ? "aspect-[4/3] bg-white" : "aspect-[4/3] bg-black"}`}>
                     <PortfolioImage
                       src={activeImage ?? selectedProject.cover}
                       alt={`Vybraný vizuál projektu ${selectedProject.title}`}
                       sizes="(max-width: 1024px) 100vw, 800px"
-                      className={selectedIsBillboard ? "object-contain" : "object-cover"}
+                      className={selectedUsesCleanPreview ? "object-contain" : "object-cover"}
                     />
                   </div>
                   <div className="mt-4 grid grid-cols-4 gap-3">
@@ -319,7 +299,7 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                         key={image}
                         type="button"
                         onClick={() => setActiveImage(image)}
-                        className={`relative overflow-hidden border ${selectedIsBillboard ? "aspect-[2.08/1]" : "aspect-[4/3]"} ${
+                        className={`relative overflow-hidden border ${selectedUsesCleanPreview ? "aspect-[4/3] bg-white" : "aspect-[4/3]"} ${
                           activeImage === image ? "border-[var(--accent)]" : "border-black/12"
                         }`}
                         aria-label={`Zobraziť obrázok projektu ${selectedProject.title}`}
@@ -328,7 +308,7 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                           src={image}
                           alt=""
                           sizes="140px"
-                          className={selectedIsBillboard ? "object-contain" : "object-cover"}
+                          className="object-cover"
                         />
                       </button>
                     ))}
@@ -372,27 +352,6 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                       </span>
                     ))}
                   </div>
-                  {selectedProject.pdf ? (
-                    <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                      <a
-                        href={withBasePath(selectedProject.pdf)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-3 bg-[var(--accent)] px-5 py-4 text-sm font-black uppercase text-white transition-colors hover:bg-black"
-                      >
-                        Zobraziť PDF
-                        <ExternalLink aria-hidden="true" className="h-4 w-4" />
-                      </a>
-                      <a
-                        href={withBasePath(selectedProject.pdf)}
-                        download
-                        className="inline-flex items-center justify-center gap-3 border border-black/16 px-5 py-4 text-sm font-black uppercase text-black transition-colors hover:border-black hover:bg-black hover:text-white"
-                      >
-                        Stiahnuť PDF
-                        <Download aria-hidden="true" className="h-4 w-4" />
-                      </a>
-                    </div>
-                  ) : null}
                 </div>
               </div>
             </motion.div>
