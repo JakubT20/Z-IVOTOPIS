@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { CalendarDays, Filter, Tag, UserRound, X } from "lucide-react";
+import { CalendarDays, Download, ExternalLink, Filter, Tag, UserRound, X } from "lucide-react";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
@@ -11,6 +11,43 @@ import type { PortfolioProject } from "@/types/project";
 type PortfolioSectionProps = {
   projects: PortfolioProject[];
 };
+
+type PortfolioImageProps = {
+  src: string;
+  alt: string;
+  sizes: string;
+  className?: string;
+};
+
+function PortfolioImage({ src, alt, sizes, className = "object-cover" }: PortfolioImageProps) {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) {
+    return (
+      <div className="absolute inset-0 grid place-items-center bg-[linear-gradient(135deg,#111111_0%,#2b160b_58%,#ff6a00_100%)] p-6 text-center">
+        <div>
+          <p className="text-xs font-black uppercase tracking-wide text-white/60">
+            Billboard preview
+          </p>
+          <p className="mt-3 font-display text-3xl font-black uppercase leading-none text-white">
+            Náhľad nie je dostupný
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <Image
+      src={withBasePath(src)}
+      alt={alt}
+      fill
+      sizes={sizes}
+      className={className}
+      onError={() => setHasError(true)}
+    />
+  );
+}
 
 export function PortfolioSection({ projects }: PortfolioSectionProps) {
   const [activeCategory, setActiveCategory] = useState("Všetko");
@@ -106,10 +143,9 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                       index % 5 === 1 ? "aspect-[3/4] xl:aspect-[3/5]" : "aspect-[4/3]"
                     }`}
                   >
-                    <Image
-                      src={withBasePath(project.cover)}
+                    <PortfolioImage
+                      src={project.cover}
                       alt={`${project.title} cover`}
-                      fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 38vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -147,6 +183,27 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                     </div>
                   </div>
                 </button>
+                {project.pdf ? (
+                  <div className="grid gap-3 px-5 pb-5 sm:grid-cols-2 sm:px-6 sm:pb-6">
+                    <a
+                      href={withBasePath(project.pdf)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 border border-black bg-black px-4 py-3 text-xs font-black uppercase text-white transition-colors hover:border-[var(--accent)] hover:bg-[var(--accent)]"
+                    >
+                      Zobraziť PDF
+                      <ExternalLink aria-hidden="true" className="h-4 w-4" />
+                    </a>
+                    <a
+                      href={withBasePath(project.pdf)}
+                      download
+                      className="inline-flex items-center justify-center gap-2 border border-black/14 px-4 py-3 text-xs font-black uppercase text-black transition-colors hover:border-black hover:bg-black hover:text-white"
+                    >
+                      Stiahnuť PDF
+                      <Download aria-hidden="true" className="h-4 w-4" />
+                    </a>
+                  </div>
+                ) : null}
               </motion.article>
             ))}
           </AnimatePresence>
@@ -193,10 +250,9 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
               <div className="grid gap-0 lg:grid-cols-[1.28fr_0.72fr]">
                 <div className="border-b border-black/12 p-5 sm:p-8 lg:border-b-0 lg:border-r">
                   <div className="relative aspect-[4/3] overflow-hidden bg-black">
-                    <Image
-                      src={withBasePath(activeImage ?? selectedProject.cover)}
+                    <PortfolioImage
+                      src={activeImage ?? selectedProject.cover}
                       alt={`Vybraný vizuál projektu ${selectedProject.title}`}
-                      fill
                       sizes="(max-width: 1024px) 100vw, 800px"
                       className="object-cover"
                     />
@@ -212,10 +268,9 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                         }`}
                         aria-label={`Zobraziť obrázok projektu ${selectedProject.title}`}
                       >
-                        <Image
-                          src={withBasePath(image)}
+                        <PortfolioImage
+                          src={image}
                           alt=""
-                          fill
                           sizes="140px"
                           className="object-cover"
                         />
@@ -261,6 +316,27 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
                       </span>
                     ))}
                   </div>
+                  {selectedProject.pdf ? (
+                    <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                      <a
+                        href={withBasePath(selectedProject.pdf)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-3 bg-[var(--accent)] px-5 py-4 text-sm font-black uppercase text-white transition-colors hover:bg-black"
+                      >
+                        Zobraziť PDF
+                        <ExternalLink aria-hidden="true" className="h-4 w-4" />
+                      </a>
+                      <a
+                        href={withBasePath(selectedProject.pdf)}
+                        download
+                        className="inline-flex items-center justify-center gap-3 border border-black/16 px-5 py-4 text-sm font-black uppercase text-black transition-colors hover:border-black hover:bg-black hover:text-white"
+                      >
+                        Stiahnuť PDF
+                        <Download aria-hidden="true" className="h-4 w-4" />
+                      </a>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </motion.div>

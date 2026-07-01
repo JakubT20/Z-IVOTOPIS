@@ -39,6 +39,7 @@ function readProject(slug: string, data: unknown): PortfolioProject {
     tags: project.tags,
     cover: project.cover,
     images: project.images,
+    pdf: typeof project.pdf === "string" ? project.pdf : undefined,
     featured: project.featured
   };
 }
