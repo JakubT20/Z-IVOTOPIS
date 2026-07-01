@@ -5,6 +5,7 @@ import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { HeroSection } from "@/components/HeroSection";
 import { Navigation } from "@/components/Navigation";
 import { PortfolioSection } from "@/components/PortfolioSection";
+import { RealEstateCatalogsSection } from "@/components/RealEstateCatalogsSection";
 import { ScrollToTopButton } from "@/components/ScrollToTopButton";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SkillsSection } from "@/components/SkillsSection";
@@ -21,6 +22,7 @@ export default async function Home() {
         <AboutSection />
         <SkillsSection />
         <PortfolioSection projects={projects} />
+        <RealEstateCatalogsSection />
         <ExperienceTimeline />
         <EducationSection />
         <ContactSection />
