@@ -7,8 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
-    "assets:generate": "node scripts/generate-assets.mjs"
+    "lint": "eslint ."
   },
   "dependencies": {
     "framer-motion": "12.41.0",
