@@ -95,11 +95,9 @@ export function HeroSection() {
         <div className="hidden lg:block" aria-hidden="true" />
         </div>
 
-        <div className="marquee-row relative left-1/2 w-screen -translate-x-1/2 border-y border-white/14 bg-black/24 py-5 text-[clamp(3.2rem,10.5vw,9.8rem)] font-black uppercase leading-none text-white/14 backdrop-blur-sm sm:py-6">
-          <span>Grafika + AI vizuály / Branding / Print / Digitálny obsah / </span>
-          <span>Grafika + AI vizuály / Branding / Print / Digitálny obsah / </span>
-          <span>Grafika + AI vizuály / Branding / Print / Digitálny obsah / </span>
-          <span>Grafika + AI vizuály / Branding / Print / Digitálny obsah / </span>
+        <div className="marquee-row border-t border-white/18 pt-4 text-[clamp(2.5rem,9vw,8rem)] font-black uppercase leading-none text-white/12">
+          <span>Dizajn / AI vizuály / Video / WordPress / Sociálny obsah / </span>
+          <span>Dizajn / AI vizuály / Video / WordPress / Sociálny obsah / </span>
         </div>
       </div>
     </section>
