@@ -124,13 +124,15 @@ button {
 
 .marquee-row {
   display: flex;
-  gap: 1rem;
+  gap: 0;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .marquee-row span {
-  animation: studio-marquee 28s linear infinite;
+  flex: 0 0 auto;
+  padding-right: 2rem;
+  animation: studio-marquee 34s linear infinite;
 }
 
 @keyframes studio-marquee {

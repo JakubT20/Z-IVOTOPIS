@@ -83,11 +83,11 @@ export function HeroSection() {
             </a>
           </div>
 
-          <div className="mt-8 grid max-w-[22rem] gap-px bg-white/15 lg:max-w-[31rem] lg:grid-cols-3">
+          <div className="mt-8 grid max-w-[22rem] gap-px bg-white/15 shadow-[0_24px_70px_rgba(0,0,0,0.28)] lg:max-w-[39rem] lg:grid-cols-[1.25fr_1fr_1.15fr]">
             {highlights.map((item) => (
-              <div key={item.label} className="bg-black/45 p-4 backdrop-blur">
+              <div key={item.label} className="min-h-32 bg-black/48 p-4 backdrop-blur-md sm:p-5">
                 <p className="text-[0.65rem] font-black uppercase text-white/42">{item.label}</p>
-                <p className="mt-3 text-sm font-black uppercase text-white">{item.value}</p>
+                <p className="mt-3 text-sm font-black uppercase leading-6 text-white">{item.value}</p>
               </div>
             ))}
           </div>
@@ -95,9 +95,11 @@ export function HeroSection() {
         <div className="hidden lg:block" aria-hidden="true" />
         </div>
 
-        <div className="marquee-row border-t border-white/18 pt-4 text-[clamp(2.5rem,9vw,8rem)] font-black uppercase leading-none text-white/12">
-          <span>Dizajn / AI vizuály / Video / WordPress / Sociálny obsah / </span>
-          <span>Dizajn / AI vizuály / Video / WordPress / Sociálny obsah / </span>
+        <div className="marquee-row relative left-1/2 w-screen -translate-x-1/2 border-y border-white/14 bg-black/24 py-5 text-[clamp(3.2rem,10.5vw,9.8rem)] font-black uppercase leading-none text-white/14 backdrop-blur-sm sm:py-6">
+          <span>Grafika + AI vizuály / Branding / Print / Digitálny obsah / </span>
+          <span>Grafika + AI vizuály / Branding / Print / Digitálny obsah / </span>
+          <span>Grafika + AI vizuály / Branding / Print / Digitálny obsah / </span>
+          <span>Grafika + AI vizuály / Branding / Print / Digitálny obsah / </span>
         </div>
       </div>
     </section>
